@@ -1,0 +1,8 @@
+{
+	def i = 2;
+	while(i = i - 1;){
+		continue;
+	}
+	print i;
+}
+

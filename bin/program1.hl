@@ -1,0 +1,31 @@
+{
+    def j = 5;
+    for (def i = 0; i < 10; i = i + 1) {
+        print i;
+        if (i) {
+            def j = 6;
+            if (i < 4) {
+                def j = 7;
+                continue;
+            }
+        }
+        if (i == 4) {
+            def j = 8;
+            if (i == 4) {
+                def j = 9;
+                break;
+            }
+        }
+    }
+    print j;
+    for (def i = 2; i <= 100; i = i + 1) {
+        def flag = 1;
+        for (def j = 2; j * j <= i; j = j + 1) {
+            if (i % j != 0) continue;
+            flag = 0;
+            break;
+        }
+        if (flag) print i + " is prime";
+    }
+    print "program end";
+}
