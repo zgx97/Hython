@@ -1,8 +1,8 @@
-### TODO：
+### TODO
 
-**1. 支持闭包特性**
+1. 去掉最外层大括号的限制
 
-**2. 完善switch语句**
+2. 实现函数闭包
 
 ### 需要提前安装的软件
 
@@ -45,6 +45,17 @@
             wget http://www.antlr3.org/download/antlr-3.4-complete.jar
             ```
 
+<<<<<<< HEAD
+   ​
+3. 构建程序
+  目前在Hython主文件夹下
+  1. 在 ./thirdpart/libs 中编译安装 C library 
+  2. 执行 make 命令
+  3. 在 ./bin 下执行可执行文件 hy_run 来解析代码文件
+
+
+=======
+>>>>>>> 763a53c4460c0a0985c7f540aeee1f9d96941b98
 ### 功能说明：
 
 1. 增加 **代码块** `block` 的定义和变量作用域的实现

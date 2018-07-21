@@ -1,8 +1,7 @@
-
 .PHONY: clean
 
 DEFS = -DDEUG
-TARGET='./bin/test'
+TARGET='./bin/hy_run'
 LIBPATH='./thirdpart/libs/libantlr3c-3.4/.libs/libantlr3c.a'
 
 all: 
