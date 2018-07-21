@@ -46,8 +46,7 @@
             ```
 
    ​
-3. 构建程序
-  目前在Hython主文件夹下
+3. 构建程序(目前在Hython主文件夹下)
   1. 在 ./thirdpart/libs 中编译安装 C library 
   2. 执行 make 命令
   3. 在 ./bin 下执行可执行文件 hy_run 来解析代码文件
