@@ -48,7 +48,7 @@
    
    
 
-3. 构建程序(目前在Hython主文件夹下)
+**构建程序(目前在Hython主文件夹下)**
 
   1. 在 ./thirdpart/libs 中编译安装 C library 
   
