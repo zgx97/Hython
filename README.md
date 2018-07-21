@@ -9,45 +9,29 @@
 1. Java 环境安装
 
    1. window下java环境配置过程略
-
    2. Ubuntu下java环境配置
-
       1. 直接使用PPA/源方式安装更方便
-
          1. 添加PPA
-
             - ```shell
               sudo add-apt-repository ppa:webupd8team/java
               sudo apt-get update
               ```
-
          2. 安装**oracle-java-installer**
-
             - ```shell
               sudo apt-get install oracle-java8-installer
               ```
-
          3. 关于服务条款直接ok，然后选择yes即可。然后等待安装结束
-
          4. 如果你因为防火墙或者其他原因,导致installer 下载速度很慢,可以中断操作.然后下载好相应jdk的tar.gz 包,放在:`/var/cache/oracle-jdk8-installer (jdk8)`下面,然后安装一次installer. installer 则会默认使用 你下载的tar.gz包
-
          5. 设置系统默认jdk
-
             - `sudo update-java-alternatives -s java-8-oracle`
-
          6. 如果系统中既有java7又有java8，可以利用下面命令切换
-
             - 切换至java7:`sudo update-java-alternatives -s java-7-oracle`
             - 切换至java8:`sudo update-java-alternatives -s java-8-oracle`
-
          7. 测试jdk是否安装成功
-
             - `java -version`
 
 2. Antlr 安装方式
-
    1. 编译安装 C library 
-
       - ```shell
         wget http://www.antlr3.org/download/C/libantlr3c-3.4.tar.gz
         tar -xzvf ./libantlr3c-3.4.tar.gz
@@ -55,15 +39,13 @@
         make
         sudo make install
         ```
-
    2. 下载 Antlr 3.4 jar包
-
          -  尽管我们安装了c library，但是从.g文件，到各种.h .c文件的过程，还是要依赖antlr java的。特别注意：必须要用3.4的jar包，我试了3.5.1，果断不行……
-
          -  ```shell
             wget http://www.antlr3.org/download/antlr-3.4-complete.jar
             ```
 
+<<<<<<< HEAD
    ​
 3. 构建程序
   目前在Hython主文件夹下
@@ -72,6 +54,8 @@
   3. 在 ./bin 下执行可执行文件 hy_run 来解析代码文件
 
 
+=======
+>>>>>>> 763a53c4460c0a0985c7f540aeee1f9d96941b98
 ### 功能说明：
 
 1. 增加 **代码块** `block` 的定义和变量作用域的实现
