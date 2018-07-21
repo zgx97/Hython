@@ -1,5 +1,3 @@
-#include "hlLexer.h"
-#include "hlParser.h"
 #include <cassert>
 #include <map>
 #include <string>
@@ -8,6 +6,8 @@
 #include <memory>
 #include "hython_dfa.h"
 #include "hython_debug.h"
+#include "hlLexer.h"
+#include "hlParser.h"
 
 using std::map;
 using std::string;
@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
     phlLexer lex;
     pANTLR3_COMMON_TOKEN_STREAM tokens;
     phlParser parser;
+    
 
     assert(argc > 1);
     input = antlr3FileStreamNew((pANTLR3_UINT8)argv[1],ANTLR3_ENC_8BIT);
