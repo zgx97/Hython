@@ -45,7 +45,6 @@
             wget http://www.antlr3.org/download/antlr-3.4-complete.jar
             ```
 
-<<<<<<< HEAD
    ​
 3. 构建程序
   目前在Hython主文件夹下
@@ -54,8 +53,6 @@
   3. 在 ./bin 下执行可执行文件 hy_run 来解析代码文件
 
 
-=======
->>>>>>> 763a53c4460c0a0985c7f540aeee1f9d96941b98
 ### 功能说明：
 
 1. 增加 **代码块** `block` 的定义和变量作用域的实现
