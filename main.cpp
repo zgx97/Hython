@@ -22,21 +22,25 @@ int main(int argc, char* argv[]) {
     pANTLR3_COMMON_TOKEN_STREAM tokens;
     phlParser parser;
     
-
     assert(argc > 1);
+
     input = antlr3FileStreamNew((pANTLR3_UINT8)argv[1],ANTLR3_ENC_8BIT);
+
     if (!input) {
         printf("can't open the program file : %s\n", argv[1]);
         exit(1);
     }
     lex = hlLexerNew(input);
-    
+
     tokens = antlr3CommonTokenStreamSourceNew(ANTLR3_SIZE_HINT,
                                             TOKENSOURCE(lex));
+
     if (!tokens) {
         exit(1);
     }
+
     parser = hlParserNew(tokens);
+
     if (!parser) {
         exit(1);
     }
@@ -45,10 +49,12 @@ int main(int argc, char* argv[]) {
     if (!tree) {
         exit(1);
     }
+
     HL::DFA dfa;
     dfa.exchange(tree);
+
     dfa.run();
-    
+
     parser->free(parser);
     tokens->free(tokens);
     lex->free(lex);

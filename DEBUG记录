@@ -1,0 +1,12 @@
+2018-7-22记录：
+    目标：去掉最外层大括号的限制
+    解决：通过观察语法树的输出可以发现如果最外层不加"{}"则最开始节点是没有节点类型的，因此直接建立DFA即可。
+        program4 ABST:
+            tree (DEF (i (ARRAY 1 2 3)))
+            tree (print i)
+
+        program3 ABST:
+            tree (BLOCK 
+                        (DEF (i (ARRAY 1 2 3))) 
+                        (print i)
+                )
