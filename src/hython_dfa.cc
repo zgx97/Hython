@@ -30,10 +30,6 @@ void DFA::run() {
 
 // 该如何修改这里的代码使之能够去掉最歪层括号呢？
 void DFA::exchange(pANTLR3_BASE_TREE tree) {
-    printf("exchange start!\n");
-    fflush(stdout);
-    printf("tree point : %p\n", tree);
-    fflush(stdout);
     pANTLR3_COMMON_TOKEN tok = tree->getToken(tree);
     // 如果当前节点没有类型则直接exchange孩子节点
     if (tok == NULL) {
