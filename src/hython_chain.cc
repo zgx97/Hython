@@ -22,7 +22,11 @@ MasterChain::~MasterChain() {
         next = this->p;
     }
 }
-
+/*
+ * MasterChain::valid
+ *     抽象责任链+工厂：查看哪个工厂能够接受这棵抽象语法树
+ *     根据作用域，解析ABST，获取相应的值
+ */
 shared_ptr<IValue> MasterChain::valid(pANTLR3_BASE_TREE tree, shared_ptr<Parameters> param) {
     IFactory *f = this->p;
     while (f) {
@@ -30,6 +34,7 @@ shared_ptr<IValue> MasterChain::valid(pANTLR3_BASE_TREE tree, shared_ptr<Paramet
             shared_ptr<IMaster> m(f->creator(param));
             shared_ptr<IValue> ret = m->run(tree);
             ConvertToIntVisitor v;
+            // 将结果存放到ret->result中
             ret->Accept(&v);
             // return v.result() ? 
             return ret;

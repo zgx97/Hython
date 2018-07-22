@@ -77,6 +77,7 @@ protected :
     virtual void beginForward(shared_ptr<Parameters> &) { return ; }
     virtual shared_ptr<IValue> getValue(shared_ptr<Parameters> &);
     IDFANode::Type __type;
+    // 注意这个__edges代表的是一组边
     shared_ptr<IDFAEdge> __edges;
 };
 

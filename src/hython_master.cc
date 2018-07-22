@@ -45,6 +45,8 @@ shared_ptr<IValue> ProgramMaster::run(pANTLR3_BASE_TREE tree) {
                 }
             } break;
             case WHILE: {
+                // Q：为什么要得到while token抽象语法树第0个孩子的值？
+                // A：因为在语法设计中，while的第0个孩子是条件判断表达式，第一个孩子是循环体
                 while (isTrue(MasterChain::get()->valid(getChild(tree, 0), this->param))) {
                     MasterChain::get()->valid(getChild(tree, 1), this->param);
                 }
@@ -87,6 +89,8 @@ IMaster *IFMaster::IIFFactory::creator(shared_ptr<Parameters> param) {
     return new IFMaster(param);
 }
 
+// MasterChain::get()->valid(getChild(tree, 0), this->param);
+// 解析作用域中的值
 shared_ptr<IValue> IFMaster::run(pANTLR3_BASE_TREE tree) {
     pANTLR3_COMMON_TOKEN tok = tree->getToken(tree);
     switch (tok->type) {

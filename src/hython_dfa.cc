@@ -3,6 +3,7 @@
 #include "hython_chain.h"
 #include "hython_debug.h"
 #include "hython_visitor.h"
+#include "hython_unit.h"
 #include <cinttypes>
 #include <stdexcept>
 
@@ -18,6 +19,7 @@ void DFA::__initBlockBeginEnd() {
 }
 
 void DFA::run() {
+    // 创建开始的作用域
     shared_ptr<Parameters> param = make_shared<Parameters>();
     IDFANode *p = this->begin;
     while (p != nullptr) {
@@ -26,10 +28,25 @@ void DFA::run() {
     return ;
 }
 
+// 该如何修改这里的代码使之能够去掉最歪层括号呢？
 void DFA::exchange(pANTLR3_BASE_TREE tree) {
+    printf("exchange start!\n");
+    fflush(stdout);
+    printf("tree point : %p\n", tree);
+    fflush(stdout);
     pANTLR3_COMMON_TOKEN tok = tree->getToken(tree);
+    // 如果当前节点没有类型则直接exchange孩子节点
+    if (tok == NULL) {
+        DFA child(this->productor);
+        this->__initBlockBeginEnd();
+        IDFANode *p = ConnectAllDFAFromTree(
+            this->begin, tree, this->productor, {-1, -1}
+        );
+        p->addEdge(IDFAEdge::Type::AnyEdge, this->end);
+        return;
+    }
     switch (tok->type) {
-        case     0 :
+        case 0 : 
         case BLOCK : {
             DFA child(this->productor);
             this->__initBlockBeginEnd();

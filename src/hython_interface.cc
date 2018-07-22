@@ -42,6 +42,7 @@ void IDFANode::addEdge(IDFAEdge::Type type, IDFANode *node) {
 
 IDFANode *IDFANode::forward(shared_ptr<Parameters> &param) {
     this->beginForward(param);
+    // 从作用域中提取出来相应变量的值
     shared_ptr<IValue> val = this->getValue(param);
     if (this->__edges) {
         return this->__edges->forward(val);
