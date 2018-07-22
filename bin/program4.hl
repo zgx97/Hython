@@ -1,3 +1,4 @@
 def i = [1,2,3];
 def str = "hello baidu";
-print i, str;
+print i;
+print str;
