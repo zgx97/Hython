@@ -1,4 +1,0 @@
-def i = [1,2,3];
-def str = "hello baidu";
-print i;
-print str;
