@@ -8,6 +8,7 @@ options {
 
 @header {
     #include <assert.h>
+    #define DEBUG
 }
 
 // The suffix '^' means make it a root.
